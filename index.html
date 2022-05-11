@@ -1,0 +1,32 @@
+<html>
+
+<head>
+	<title>Google login</title>
+	<meta name="google-signin-client_id" content="1071066717069-6d3h3m8no5s9lgdr1pp8l37h8q8js15n.apps.googleusercontent.com">
+	<script src="https://apis.google.com/js/platform.js" async defer></script>
+</head>
+
+
+<body>
+
+	<h3> Welcome to google authentication tutorial.</h3>
+	<div class="g-signin2" data-onsuccess="signIn"></div>
+	<button onclick="signOut()">Sign out</button>
+</body>
+
+<script>
+	function signIn(googleUser){
+		console.log('User is ' + JSON.stringify(googleUser.getBasicProfile()))
+	}
+
+	function signOut(){
+		gapi.auth2.getAuthInstance().signOut().then(function(){
+			console.log("User signed out successfully.")
+		})
+	}
+</script>
+
+</html>
+
+<!-- python3 -m http.server 3000 -->
+<!-- https://www.youtube.com/watch?v=tjCxuDh5e9I&ab_channel=NetCastonWebTechZone -->
